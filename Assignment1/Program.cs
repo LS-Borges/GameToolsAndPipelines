@@ -140,7 +140,7 @@ namespace Assignment1
 
                 Console.WriteLine($"Sorting by [{sortColumnName}]");
 
-                //ColumnNames column = (ColumnNames)Enum.Parse(typeof(ColumnNames), sortColumnName);
+                ColumnNames column = (ColumnNames)Enum.Parse(typeof(ColumnNames), sortColumnName);
 
                 if (sortColumnName == "Name")
                 {
