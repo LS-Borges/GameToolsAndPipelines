@@ -3,16 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
+public enum WeaponType
+{
+    Sword,
+    Polearm,
+    Claymore,
+    Catalyst,
+    Bow,
+    None
+}
 
 namespace Assignment2a
 {
     public class Weapon
-    {
+    { 
+
         // Name,Type,Rarity,BaseAttack
         public string Name { get; set; }
-        public string Type { get; set; }
+        public WeaponType Type { get; set; }
         public int Rarity { get; set; }
         public int BaseAttack { get; set; }
+        public string Image { get; set; }
+        public string SecondaryStat { get; set; }
+        public string Passive { get; set; }
+        
+
 
         /// <summary>
         /// The Comparator function to check for name
@@ -50,7 +67,12 @@ namespace Assignment2a
         {
             // TODO: construct a comma seperated value string
             // Name,Type,Rarity,BaseAttack
-            return $"{Name},{Type},{Rarity},{BaseAttack}";
+            return $"{Name},{Type},{Image},{Rarity},{BaseAttack},{SecondaryStat},{Passive}";
         }
+        static bool TryParse(string rawData, out Weapon weapon)
+        {
+            
+        }
+
     }
 }

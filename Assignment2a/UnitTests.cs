@@ -11,7 +11,7 @@ namespace Assignment2a
     [TestFixture]
     public class UnitTests
     {
-        // private WeaponCollection WeaponCollection;
+        private WeaponCollection WeaponCollection;
         private string inputPath;
         private string outputPath;
 
@@ -29,7 +29,7 @@ namespace Assignment2a
         {
             inputPath = CombineToAppPath(INPUT_FILE);
             outputPath = CombineToAppPath(OUTPUT_FILE);
-            // WeaponCollection = new WeaponCollection();
+            WeaponCollection = new WeaponCollection();
         }
 
         [TearDown]
@@ -48,6 +48,7 @@ namespace Assignment2a
         {
             // Expected Value: 48
             // TODO: call WeaponCollection.GetHighestBaseAttack() and confirm that it matches the expected value using asserts.
+            WeaponCollection.GetHighestBaseAttack();
         }
 
         [Test]
@@ -55,19 +56,22 @@ namespace Assignment2a
         {
             // Expected Value: 23
             // TODO: call WeaponCollection.GetLowestBaseAttack() and confirm that it matches the expected value using asserts.
+            WeaponCollection.GetLowestBaseAttack();
         }
 
-        //[TestCase(WeaponType.Sword, 21)]
-        //public void WeaponCollection_GetAllWeaponsOfType_ListOfWeapons(WeaponType type, int expectedValue)
-        //{
-        //    // TODO: call WeaponCollection.GetAllWeaponsOfType(type) and confirm that the weapons list returns Count matches the expected value using asserts.
-        //}
-        
+        [TestCase(WeaponType.Sword, 21)]
+        public void WeaponCollection_GetAllWeaponsOfType_ListOfWeapons(WeaponType type, int expectedValue)
+        {
+            // TODO: call WeaponCollection.GetAllWeaponsOfType(type) and confirm that the weapons list returns Count matches the expected value using asserts.
+            WeaponCollection.GetAllWeaponsOfType(type);
+        }
+
 
         [TestCase(5, 10)]
         public void WeaponCollection_GetAllWeaponsOfRarity_ListOfWeapons(int stars, int expectedValue)
         {
             // TODO: call WeaponCollection.GetAllWeaponsOfRarity(stars) and confirm that the weapons list returns Count matches the expected value using asserts.
+            WeaponCollection.GetAllWeaponsOfRarity(stars);
         }
 
         [Test]
@@ -92,10 +96,10 @@ namespace Assignment2a
         public void WeaponCollection_SaveEmpty_TrueAndEmpty()
         {
             // After saving an empty WeaponCollection, load the file and expect WeaponCollection to be empty.
-            //WeaponCollection.Clear();
+            WeaponCollection.Clear();
             //Assert.IsTrue(WeaponCollection.Save(outputPath));
             //Assert.IsTrue(WeaponCollection.Load(outputPath));
-            //Assert.IsTrue(WeaponCollection.Count == 0);
+            Assert.IsTrue(WeaponCollection.Count == 0);
         }
 
         // Weapon Unit Tests

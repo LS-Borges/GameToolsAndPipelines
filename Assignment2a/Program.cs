@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 
 // TODO: Fill in your name and student number.
-// Assignment 1
+// Assignment 2a
 // NAME: Leon Borges
 // STUDENT NUMBER: 202-2595
 
@@ -41,7 +41,7 @@ namespace Assignment2a
             string sortColumnName = string.Empty;
 
             // The results to be output to a file or to the console
-            List<Weapon> results = new List<Weapon>();
+            WeaponCollection results = new WeaponCollection();
 
             for (int i = 0; i < args.Length; i++)
             {
@@ -215,7 +215,7 @@ namespace Assignment2a
         /// </summary>
         /// <param name="fileName">The path to the file</param>
         /// <returns>The list of Weapons</returns>
-        public static List<Weapon> Parse(string fileName)
+        public static WeaponCollection Parse(string fileName)
         {
             // TODO: implement the streamreader that reads the file and appends each line to the list
             // note that the result that you get from using read is a string, and needs to be parsed 
@@ -226,7 +226,7 @@ namespace Assignment2a
             // streamreader https://msdn.microsoft.com/en-us/library/system.io.streamreader(v=vs.110).aspx
             // Use string split https://msdn.microsoft.com/en-us/library/system.string.split(v=vs.110).aspx
 
-            List<Weapon> output = new List<Weapon>();
+            WeaponCollection output = new WeaponCollection();
 
             using (StreamReader reader = new StreamReader(fileName))
             {
@@ -266,4 +266,6 @@ namespace Assignment2a
             return output;
         }
     }
+
+    
 }
