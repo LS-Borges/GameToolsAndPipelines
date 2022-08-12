@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace Assignment2a
 {
-    public class WeaponCollection : List<Weapon>, IPeristence
+    public class WeaponCollection : List<Weapon>, IPersistence
     {
         List<Weapon> collection = new List<Weapon>();
 
-        bool IPeristence.Load(string filename)
+        public bool Load(string filename)
         {
-            
+            //do error handling first
+            WeaponDataParse(filename);
+            return true;
         }
 
-        bool IPeristence.Save(string filename)
+        public bool Save(string filename)
         {
-
+            return true;
         }
 
         public int GetHighestBaseAttack()
@@ -23,21 +24,44 @@ namespace Assignment2a
             
             return 0;
         }
+
         public int GetLowestBaseAttack()
         {
             return 0;
         }
+
         public List<Weapon> GetAllWeaponsOfType(WeaponType type)
         {
-            return 0;
+            return null;
         }
+
         public List<Weapon> GetAllWeaponsOfRarity(int stars)
         {
-            return List<Weapon> a;
+            return null;
         }
+
         public void SortBy(string columnName)
         {
             
+        }
+
+        private void WeaponDataParse(string fileName)
+        {
+            using (StreamReader reader = new StreamReader(fileName))
+            {
+                string header = reader.ReadLine();
+                string[] headerValues = header.Split(',');
+
+                while (reader.Peek() > 0)
+                {
+                    string line = reader.ReadLine();
+
+                    if (Weapon.TryParse(headerValues.Length, line, out Weapon weapon))
+                    {
+                        Add(weapon);
+                    }
+                }
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
 // TODO: Fill in your name and student number.
@@ -84,7 +83,7 @@ namespace Assignment2a
                         else
                         {
                             // This function returns a List<Weapon> once the data is parsed.
-                            results = Parse(inputFile);
+                            results.Load(inputFile);
                             Console.WriteLine("File loaded");
                         }
                     }
@@ -215,57 +214,8 @@ namespace Assignment2a
         /// </summary>
         /// <param name="fileName">The path to the file</param>
         /// <returns>The list of Weapons</returns>
-        public static WeaponCollection Parse(string fileName)
-        {
-            // TODO: implement the streamreader that reads the file and appends each line to the list
-            // note that the result that you get from using read is a string, and needs to be parsed 
-            // to an int for certain fields i.e. HP, Attack, etc.
-            // i.e. int.Parse() and if the results cannot be parsed it will throw an exception
-            // or can use int.TryParse() 
-
-            // streamreader https://msdn.microsoft.com/en-us/library/system.io.streamreader(v=vs.110).aspx
-            // Use string split https://msdn.microsoft.com/en-us/library/system.string.split(v=vs.110).aspx
-
-            WeaponCollection output = new WeaponCollection();
-
-            using (StreamReader reader = new StreamReader(fileName))
-            {
-                // Skip the first line because header does not need to be parsed.
-                // Name,Type,Rarity,BaseAttack
-
-                string header = reader.ReadLine();
-                string[] headerValues = header.Split(',');
-
-                // The rest of the lines looks like the following:
-                // Skyward Blade,Sword,5,46
-                while (reader.Peek() > 0)
-                {
-                    string line = reader.ReadLine();
-                    string[] values = line.Split(',');
-
-                    Weapon weapon = new Weapon();
-
-                    // TODO: validate that the string array the size expected.
-                    // TODO: use int.Parse or TryParse for stats/number values.
-                    // Populate the properties of the Weapon
-                    // TODO: Add the Weapon to the list
-
-                    if (values.Length == headerValues.Length)
-                    {
-                        weapon.Name = values[0];
-                        weapon.Type = values[1];
-                        weapon.Rarity = int.Parse(values[2]);
-                        weapon.BaseAttack = int.Parse(values[3]);
-
-                        output.Add(weapon);
-                    }
-
-                }
-            }
-
-            return output;
-        }
+        
     }
 
-    
+
 }

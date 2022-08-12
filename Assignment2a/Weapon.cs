@@ -19,7 +19,6 @@ namespace Assignment2a
 {
     public class Weapon
     { 
-
         // Name,Type,Rarity,BaseAttack
         public string Name { get; set; }
         public WeaponType Type { get; set; }
@@ -29,8 +28,6 @@ namespace Assignment2a
         public string SecondaryStat { get; set; }
         public string Passive { get; set; }
         
-
-
         /// <summary>
         /// The Comparator function to check for name
         /// </summary>
@@ -69,10 +66,37 @@ namespace Assignment2a
             // Name,Type,Rarity,BaseAttack
             return $"{Name},{Type},{Image},{Rarity},{BaseAttack},{SecondaryStat},{Passive}";
         }
-        static bool TryParse(string rawData, out Weapon weapon)
-        {
-            
-        }
 
+        public static bool TryParse(int headerLength, string rawData, out Weapon weapon)
+        {
+            weapon = new Weapon();
+
+            string[] values = rawData.Split(',');
+
+            if (values.Length != headerLength)
+            {
+                Console.WriteLine("Length invalid");
+                return false;
+            }
+
+            weapon.Name = values[0];
+
+            if (Enum.TryParse(values[1], out WeaponType results))
+            {
+                weapon.Type = results;
+            }
+            else
+            {
+                Console.WriteLine($"Weapon Type is not valid [{results}], please change.");
+            }
+
+            weapon.Image = values[2];
+            weapon.Rarity = int.Parse(values[3]);
+            weapon.BaseAttack = int.Parse(values[4]);
+            weapon.SecondaryStat = values[5];
+            weapon.Passive = values[6];
+
+            return true;
+        }
     }
 }
