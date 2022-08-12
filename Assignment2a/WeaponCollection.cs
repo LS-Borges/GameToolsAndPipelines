@@ -5,10 +5,16 @@ namespace Assignment2a
 {
     public class WeaponCollection : List<Weapon>, IPersistence
     {
-        List<Weapon> collection = new List<Weapon>();
-
         public bool Load(string filename)
         {
+            if (string.IsNullOrEmpty(filename))
+            {
+                Console.WriteLine("FAILED TO READ FILE");
+            }
+            else if (!File.Exists(filename))
+            {
+                Console.WriteLine($"{filename} DOES NOT EXIST");
+            }
             //do error handling first
             WeaponDataParse(filename);
             return true;
@@ -21,23 +27,60 @@ namespace Assignment2a
 
         public int GetHighestBaseAttack()
         {
-            
-            return 0;
+            int result = 0;
+
+            foreach(var weapon in this)
+            {
+                if(weapon.BaseAttack > result)
+                {
+                    result = weapon.BaseAttack;
+                }
+            }
+            return result;
         }
 
         public int GetLowestBaseAttack()
         {
-            return 0;
+            int result = 100000;
+
+            foreach (var weapon in this)
+            {
+                if (weapon.BaseAttack < result)
+                {
+                    result = weapon.BaseAttack;
+                }
+            }
+            return result;
         }
 
         public List<Weapon> GetAllWeaponsOfType(WeaponType type)
         {
-            return null;
+            List<Weapon> resultList = new List<Weapon>();
+
+            foreach (var weapon in this)
+            {
+                if (weapon.Type == type)
+                {
+                    resultList.Add(weapon);
+                }
+            }
+
+            return resultList;
         }
 
         public List<Weapon> GetAllWeaponsOfRarity(int stars)
         {
-            return null;
+            List<Weapon> resultList = new List<Weapon>();
+
+            foreach (var weapon in this)
+            {
+                if (weapon.Rarity == stars)
+                {
+                    resultList.Add(weapon);
+                }
+            }
+
+            return resultList;
         }
 
         public void SortBy(string columnName)

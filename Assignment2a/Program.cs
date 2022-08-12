@@ -49,14 +49,8 @@ namespace Assignment2a
                 {
                     Console.WriteLine("-i <path> or --input <path> : loads the input file path specified (required)");
                     Console.WriteLine("-o <path> or --output <path> : saves result in the output file path specified (optional)");
-
-                    // TODO: include help info for count
                     Console.WriteLine("-c or --count : displays the number of entries in the input file (optional).");
-
-                    // TODO: include help info for append
                     Console.WriteLine("-a or --append : enables append mode when writing to an existing output file (optional)");
-
-                    // TODO: include help info for sort
                     Console.WriteLine("-s or --sort <column name> : outputs the results sorted by column name");
 
                     break;
@@ -72,12 +66,10 @@ namespace Assignment2a
 
                         if (string.IsNullOrEmpty(inputFile))
                         {
-                            // TODO: print no input file specified.
                             Console.WriteLine("FAILED TO READ FILE");
                         }
                         else if (!File.Exists(inputFile))
                         {
-                            // TODO: print the file specified does not exist.
                             Console.WriteLine($"{inputFile} DOES NOT EXIST");
                         }
                         else
@@ -90,9 +82,7 @@ namespace Assignment2a
                 }
                 else if (args[i] == "-s" || args[i] == "--sort")
                 {
-                    // TODO: set the sortEnabled flag and see if the next argument is set for the column name
                     sortEnabled = true;
-                    // TODO: set the sortColumnName string used for determining if there's another sort function.
                     ++i;
                     sortColumnName = args[i];
                 }
@@ -102,7 +92,6 @@ namespace Assignment2a
                 }
                 else if (args[i] == "-a" || args[i] == "--append")
                 {
-                    // TODO: set the appendToFile flag
                     appendToFile = true;
                 }
                 else if (args[i] == "-o" || args[i] == "--output")
@@ -115,12 +104,10 @@ namespace Assignment2a
                         string filePath = args[i];
                         if (string.IsNullOrEmpty(filePath))
                         {
-                            // TODO: print No output file specified.
                             Console.WriteLine("NO OUTPUT FILE SPECIFIED");
                         }
                         else
                         {
-                            // TODO: set the output file to the outputFile
                             outputFile = filePath;
                         }
                     }
@@ -184,8 +171,7 @@ namespace Assignment2a
                     using (StreamWriter writer = new StreamWriter(fs))
                     {
                         // Hint: use writer.WriteLine
-                        // TODO: write the header of the output "Name,Type,Rarity,BaseAttack"
-                        writer.WriteLine("Name,Type,Rarity,BaseAttack");
+                        writer.WriteLine("Name,Type,Image,Rarity,BaseAttack,SecondaryStat,Passive");
 
                         for (int j = 0; j < results.Count; ++j)
                         {
@@ -207,14 +193,7 @@ namespace Assignment2a
             }
 
             Console.WriteLine("Done!");
-        }
-
-        /// <summary>
-        /// Reads the file and line by line parses the data into a List of Weapons
-        /// </summary>
-        /// <param name="fileName">The path to the file</param>
-        /// <returns>The list of Weapons</returns>
-        
+        }        
     }
 
 
