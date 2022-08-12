@@ -120,13 +120,7 @@ namespace Assignment2a
 
             if (sortEnabled)
             {
-                // TODO: add implementation to determine the column name to trigger a different sort. (Hint: column names are the 4 properties of the weapon class)
-                // print: Sorting by <column name> e.g. BaseAttack
-                // Sorts the list based off of the Weapon name.
-
                 Console.WriteLine($"Sorting by [{sortColumnName}]");
-
-                //ColumnNames column = (ColumnNames)Enum.Parse(typeof(ColumnNames), sortColumnName);
 
                 if (sortColumnName == "Name")
                 {
@@ -153,43 +147,7 @@ namespace Assignment2a
 
             if (results.Count > 0)
             {
-                if (!string.IsNullOrEmpty(outputFile))
-                {
-                    FileStream fs;
-
-                    // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
-                    if (appendToFile && File.Exists((outputFile)))
-                    {
-                        fs = File.Open(outputFile, FileMode.Append);
-                    }
-                    else
-                    {
-                        fs = File.Open(outputFile, FileMode.Create);
-                    }
-
-                    // opens a stream writer with the file handle to write to the output file.
-                    using (StreamWriter writer = new StreamWriter(fs))
-                    {
-                        // Hint: use writer.WriteLine
-                        writer.WriteLine("Name,Type,Image,Rarity,BaseAttack,SecondaryStat,Passive");
-
-                        for (int j = 0; j < results.Count; ++j)
-                        {
-                            writer.WriteLine(results[j].ToString());
-                        }
-
-                        // TODO: print out the file has been saved.
-                        Console.WriteLine("File has been saved");
-                    }
-                }
-                else
-                {
-                    // prints out each entry in the weapon list results.
-                    for (int i = 0; i < results.Count; i++)
-                    {
-                        Console.WriteLine(results[i]);
-                    }
-                }
+                results.Save(appendToFile, outputFile);
             }
 
             Console.WriteLine("Done!");

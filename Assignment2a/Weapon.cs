@@ -39,7 +39,6 @@ namespace Assignment2a
             return left.Name.CompareTo(right.Name);
         }
 
-        // TODO: add sort for each property:
         // CompareByType
         public static int CompareByType(Weapon left, Weapon right)
         {
@@ -62,8 +61,6 @@ namespace Assignment2a
         /// <returns>The Weapon formated string</returns>
         public override string ToString()
         {
-            // TODO: construct a comma seperated value string
-            // Name,Type,Rarity,BaseAttack
             return $"{Name},{Type},{Image},{Rarity},{BaseAttack},{SecondaryStat},{Passive}";
         }
 
@@ -79,20 +76,38 @@ namespace Assignment2a
                 return false;
             }
 
-            weapon.Name = values[0];
-
-            if (Enum.TryParse(values[1], out WeaponType results))
+            if (Enum.TryParse(values[1], out WeaponType enumResult))
             {
-                weapon.Type = results;
+                weapon.Type = enumResult;
             }
             else
             {
-                Console.WriteLine($"Weapon Type is not valid [{results}], please change.");
+                Console.WriteLine($"Weapon Type is not valid [{enumResult}], please change.");
+                return false;
             }
 
+            if (int.TryParse(values[3], out int intResult))
+            {
+                weapon.Rarity = intResult;
+            }
+            else
+            {
+                Console.WriteLine($"Rarity is not valid [{intResult}], please change.");
+                return false;
+            }
+
+            if (int.TryParse(values[4], out int intResult2))
+            {
+                weapon.BaseAttack = intResult2;
+            }
+            else
+            {
+                Console.WriteLine($"BaseAttack is not valid [{intResult2}], please change.");
+                return false;
+            }
+
+            weapon.Name = values[0];
             weapon.Image = values[2];
-            weapon.Rarity = int.Parse(values[3]);
-            weapon.BaseAttack = int.Parse(values[4]);
             weapon.SecondaryStat = values[5];
             weapon.Passive = values[6];
 

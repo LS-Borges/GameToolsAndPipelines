@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Assignment2a
@@ -10,19 +11,62 @@ namespace Assignment2a
             if (string.IsNullOrEmpty(filename))
             {
                 Console.WriteLine("FAILED TO READ FILE");
+                return false;
             }
             else if (!File.Exists(filename))
             {
                 Console.WriteLine($"{filename} DOES NOT EXIST");
+                return false;
             }
-            //do error handling first
-            WeaponDataParse(filename);
-            return true;
+            else
+            {
+                WeaponDataParse(filename);
+                return true;
+            }           
         }
 
-        public bool Save(string filename)
+        public bool Save(bool appendToFile, string filename)
         {
-            return true;
+            if (!string.IsNullOrEmpty(filename))
+            {
+                FileStream fs;
+
+                // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
+                if (appendToFile && File.Exists((filename)))
+                {
+                    fs = File.Open(filename, FileMode.Append);
+                }
+                else
+                {
+                    fs = File.Open(filename, FileMode.Create);
+                }
+
+                // opens a stream writer with the file handle to write to the output file.
+                using (StreamWriter writer = new StreamWriter(fs))
+                {
+                    // Hint: use writer.WriteLine
+                    writer.WriteLine("Name,Type,Image,Rarity,BaseAttack,SecondaryStat,Passive");
+
+                    for (int j = 0; j < this.Count; ++j)
+                    {
+                        writer.WriteLine(this[j].ToString());
+                    }
+
+                    Console.WriteLine("File has been saved");
+                    return true;
+                }
+            }
+            else
+            {
+                // prints out each entry in the weapon list results.
+                for (int i = 0; i < this.Count; i++)
+                {
+                    Console.WriteLine(this[i]);
+                }
+
+                Console.WriteLine("OUTPUT FILE DOES NOT EXIST OR NOT SPECIFIED");
+                return false;
+            }
         }
 
         public int GetHighestBaseAttack()

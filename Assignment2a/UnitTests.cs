@@ -46,7 +46,7 @@ namespace Assignment2a
         [Test]
         public void WeaponCollection_GetHighestBaseAttack_HighestValue()
         {
-            weaponCollection.Load(inputPath);
+            Assert.IsTrue(weaponCollection.Load(inputPath));
             int result = weaponCollection.GetHighestBaseAttack();
             Assert.AreEqual(result, 48);
         }
@@ -54,7 +54,7 @@ namespace Assignment2a
         [Test]
         public void WeaponCollection_GetLowestBaseAttack_LowestValue()
         {
-            weaponCollection.Load(inputPath);
+            Assert.IsTrue(weaponCollection.Load(inputPath));
             int result = weaponCollection.GetLowestBaseAttack();
             Assert.AreEqual(result, 23);
         }
@@ -62,7 +62,7 @@ namespace Assignment2a
         [TestCase(WeaponType.Sword, 21)]
         public void WeaponCollection_GetAllWeaponsOfType_ListOfWeapons(WeaponType type, int expectedValue)
         {
-            weaponCollection.Load(inputPath);
+            Assert.IsTrue(weaponCollection.Load(inputPath));
             int result = weaponCollection.GetAllWeaponsOfType(type).Count;
             Assert.AreEqual(result, expectedValue);
         }
@@ -71,8 +71,7 @@ namespace Assignment2a
         [TestCase(5, 10)]
         public void WeaponCollection_GetAllWeaponsOfRarity_ListOfWeapons(int stars, int expectedValue)
         {
-            // TODO: call WeaponCollection.GetAllWeaponsOfRarity(stars) and confirm that the weapons list returns Count matches the expected value using asserts.
-            weaponCollection.Load(inputPath);
+            Assert.IsTrue(weaponCollection.Load(inputPath));
             int result = weaponCollection.GetAllWeaponsOfRarity(stars).Count;
             Assert.AreEqual(result, expectedValue);
         }
@@ -95,8 +94,8 @@ namespace Assignment2a
         public void WeaponCollection_SaveWithValuesCanLoad_TrueAndNotEmpty()
         {
             // TODO: save returns true, load returns true, and WeaponCollection is not empty.
-
-            Assert.IsTrue(weaponCollection.Save(outputPath));
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.Save(false, outputPath));
             Assert.IsTrue(weaponCollection.Load(outputPath));
             Assert.IsTrue(weaponCollection.Count > 0);
         }
@@ -106,7 +105,7 @@ namespace Assignment2a
         {
             // After saving an empty WeaponCollection, load the file and expect WeaponCollection to be empty.
             weaponCollection.Clear();
-            Assert.IsTrue(weaponCollection.Save(outputPath));
+            Assert.IsTrue(weaponCollection.Save(false, outputPath));
             Assert.IsTrue(weaponCollection.Load(outputPath));
             Assert.IsTrue(weaponCollection.Count == 0);
         }
@@ -145,7 +144,18 @@ namespace Assignment2a
         [Test]
         public void Weapon_TryParseInvalidLine_FalseNull()
         {
-            // TODO: use "1,Bulbasaur,A,B,C,65,65", Weapon.TryParse returns false, and Weapon is null.
+            string line = "1,Bulbasaur,A,B,C,65,65";
+            string[] values = line.Split(',');
+            Weapon actual;
+
+            Assert.IsFalse(Weapon.TryParse(values.Length, line, out actual));
+            Assert.IsTrue(actual.Name == null);
+            Assert.IsTrue(actual.Type == 0);
+            Assert.IsTrue(actual.BaseAttack == 0);
+            Assert.IsTrue(actual.Image == null);
+            Assert.IsTrue(actual.Rarity == 0);
+            Assert.IsTrue(actual.SecondaryStat == null);
+            Assert.IsTrue(actual.Passive == null);
         }
     }
 }
