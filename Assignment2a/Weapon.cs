@@ -15,7 +15,7 @@ public enum WeaponType
     None
 }
 
-namespace Assignment2a
+namespace Assignment2ab
 {
     public class Weapon
     { 

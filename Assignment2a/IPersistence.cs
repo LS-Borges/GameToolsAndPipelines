@@ -1,4 +1,4 @@
-﻿namespace Assignment2a
+﻿namespace Assignment2ab
 {
     public interface IPersistence
     {

@@ -2,11 +2,11 @@
 using System.IO;
 
 // TODO: Fill in your name and student number.
-// Assignment 2a
+// Assignment 2b
 // NAME: Leon Borges
 // STUDENT NUMBER: 202-2595
 
-namespace Assignment2a
+namespace Assignment2ab
 {
     enum ColumnNames
     {

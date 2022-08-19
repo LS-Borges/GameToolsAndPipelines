@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Assignment2a
+namespace Assignment2ab
 {
     [TestFixture]
     public class UnitTests
@@ -93,7 +93,6 @@ namespace Assignment2a
         [Test]
         public void WeaponCollection_SaveWithValuesCanLoad_TrueAndNotEmpty()
         {
-            // TODO: save returns true, load returns true, and WeaponCollection is not empty.
             Assert.IsTrue(weaponCollection.Load(inputPath));
             Assert.IsTrue(weaponCollection.Save(false, outputPath));
             Assert.IsTrue(weaponCollection.Load(outputPath));
@@ -157,5 +156,77 @@ namespace Assignment2a
             Assert.IsTrue(actual.SecondaryStat == null);
             Assert.IsTrue(actual.Passive == null);
         }
+
+        //Test LoadCsv Valid
+        [Test]
+        public void WeaponCollection_Load_Save_Load_ValidCsv()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.Save(false, outputPath));
+            Assert.IsTrue(weaponCollection.Load(outputPath));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_Load_SaveAsCSV_LoadCSV_ValidCsv()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.SaveAsCSV(outputPath));
+            Assert.IsTrue(weaponCollection.LoadCSV(outputPath));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        //Test SaveAsCSV Empty
+        [Test]
+        public void WeaponCollection_SaveEmpty_Load_ValidCsv()
+        {
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.SaveAsCSV(outputPath));
+            Assert.IsTrue(weaponCollection.Load(outputPath));
+            Assert.IsTrue(weaponCollection.Count == 0);
+        }
+
     }
 }
+
+//Test LoadJson Valid
+//1.WeaponCollection_Load_Save_Load_ValidJson - Load the data2.csv and Save () it to
+//weapons.json and call Load () output and validate that there’s 95 entries
+//2. WeaponCollection_Load_SaveAsJSON_Load_ValidJson - Load the data2.csv and
+//SaveAsJSON () it to weapons.json and call Load () output and validate that there’s 95
+//entries
+//3. WeaponCollection_Load_SaveAsJSON_LoadJSON_ValidJson - Load the data2.csv
+//and SaveAsJSON () it to weapons.json and call LoadJSON () on output and validate that
+//there’s 95 entries
+//4. WeaponCollection_Load_Save_LoadJSON_ValidJson - Load the data2.csv and
+//Save () it to weapons.json and call LoadJSON () on output and validate that there’s 95
+//entries
+
+//Test LoadXML Valid
+//1. WeaponCollection_Load_Save_Load_ValidXml - Load the data2.csv and Save () it to
+//weapons.xml and Load () output and validate that there’s 95 entries
+//2. WeaponCollection_Load_SaveAsXML_LoadXML_ValidXml - Load the data2.csv and
+//SaveAsXML () it to weapons.xml and LoadXML () output and validate that there’s 95
+//entries
+
+//Test SaveAsJSON Empty
+//1. WeaponCollection_SaveEmpty_Load_ValidJson - Create an empty
+//WeaponCollection, call SaveAsJSON () to empty.json, and Load () the output and verify
+//the WeaponCollection has a Count of 0
+
+//Test SaveAsXML Empty
+//1. WeaponCollection_SaveEmpty_Load_ValidXml - Create an empty
+//WeaponCollection, call SaveAsXML () to empty.xml, and Load and verify the
+//WeaponCollection has a Count of 0
+
+//Test Load InvalidFormat
+//1. WeaponCollection_Load_SaveJSON_LoadXML_InvalidXml - Load the data2.csv and
+//SaveAsJSON () it to weapons.json and call LoadXML () output and validate that it returns
+//false, and there’s 0 entries
+//2. WeaponCollection_Load_SaveXML_LoadJSON_InvalidJson - Load the data2.csv
+//and SaveAsXML () it to weapons.xml and call LoadJSON () output and validate that it
+//returns false, and there’s 0 entries
+//3. WeaponCollection_ValidCsv_LoadXML_InvalidXml - LoadXML() on the data2.csv
+//and validate that returns false, and there’s 0 entries
+//4. WeaponCollection_ValidCsv_LoadJSON_InvalidJson - LoadJSON() on the
+//data2.csv and validate that Load returns false, and there’s 0 entries

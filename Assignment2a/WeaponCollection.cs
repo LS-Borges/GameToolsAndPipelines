@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections;
 
-namespace Assignment2a
+namespace Assignment2ab
 {
-    public class WeaponCollection : List<Weapon>, IPersistence
+    public class WeaponCollection : List<Weapon>, IPersistence, IJsonSerializable, ICsvSerializable, IXmlSerializable
     {
+        // Load Functions
         public bool Load(string filename)
         {
             if (string.IsNullOrEmpty(filename))
@@ -25,6 +28,22 @@ namespace Assignment2a
             }           
         }
 
+        public bool LoadCSV(string path)
+        {
+
+        }
+
+        public bool LoadJSON(string path)
+        {
+
+        }
+
+        //public bool LoadXML(string path)
+        //{
+
+        //}
+
+        // Save Functions 
         public bool Save(bool appendToFile, string filename)
         {
             if (!string.IsNullOrEmpty(filename))
@@ -69,6 +88,24 @@ namespace Assignment2a
             }
         }
 
+        public bool SaveAsCSV(string path)
+        {
+
+        }
+
+        public bool SaveAsJSON(string path)
+        {
+            string data = JsonUtility.ToJson(path., true);
+            File.WriteAllText(path, data);
+            return true;
+        }
+
+        //public bool SaveAsXML(string path)
+        //{
+
+        //}
+
+        // Get Functions
         public int GetHighestBaseAttack()
         {
             int result = 0;
