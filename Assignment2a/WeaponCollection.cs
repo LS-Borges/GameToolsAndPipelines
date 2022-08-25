@@ -50,20 +50,85 @@ namespace Assignment2ab
 
         public bool LoadCSV(string filename)
         {
-            WeaponDataParse(filename);
-            return true;
+            string extension = Path.GetExtension(filename);
+
+            if (File.Exists(filename))
+            {
+                if (extension.ToLower() != ".csv")
+                {
+                    Console.WriteLine($"{extension} INCORRECT EXTENSION");
+                    return false;
+                }
+                    WeaponDataParse(filename);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("INEXISTENT FILE");
+                return false;
+            }
+                
         }
 
         public bool LoadJSON(string filename)
         {
-            using (StreamReader reader = new StreamReader(filename))
+            string extension = Path.GetExtension(filename);
+
+            if (File.Exists(filename))
             {
+                if (extension.ToLower() != ".json")
+                {
+                    Console.WriteLine($"{extension} INCORRECT EXTENSION");
+                    return false;
+                }
+
+                using (StreamReader reader = new StreamReader(filename))
+                {
+                    WeaponCollection temp = new WeaponCollection();
+
+                    if (reader.Peek() > 0)
+                    {
+                        string data = reader.ReadToEnd();
+                        temp = JsonSerializer.Deserialize<WeaponCollection>(data);
+
+                        foreach (var weapon in temp)
+                        {
+                            Add(weapon);
+                        }
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("INEXISTENT FILE");
+                return false;
+            }
+        }
+
+        public bool LoadXML(string filename)
+        {
+            string extension = Path.GetExtension(filename);
+
+            if (File.Exists(filename))
+            {
+                if (extension.ToLower() != ".xml")
+                {
+                    Console.WriteLine($"{extension} INCORRECT EXTENSION");
+                    return false;
+                }
+
                 WeaponCollection temp = new WeaponCollection();
 
-                if (reader.Peek() > 0)
+                using (FileStream fs = new FileStream(filename, FileMode.Open))
                 {
-                    string data = reader.ReadToEnd();
-                    temp = JsonSerializer.Deserialize<WeaponCollection>(data);
+                    XmlSerializer xs = new XmlSerializer(typeof(WeaponCollection));
+                    temp = (WeaponCollection)xs.Deserialize(fs);
 
                     foreach (var weapon in temp)
                     {
@@ -72,28 +137,11 @@ namespace Assignment2ab
 
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
             }
-        }
-
-        public bool LoadXML(string filename)
-        {
-            WeaponCollection temp = new WeaponCollection();
-
-            using (FileStream fs = new FileStream(filename, FileMode.Open))
+            else
             {
-                XmlSerializer xs = new XmlSerializer(typeof(WeaponCollection));
-                temp = (WeaponCollection)xs.Deserialize(fs);
-
-                foreach (var weapon in temp)
-                {
-                    Add(weapon);
-                }
-
-                return true;
+                Console.WriteLine("INEXISTENT FILE");
+                return false;
             }
         }
 
@@ -196,20 +244,23 @@ namespace Assignment2ab
 
         public bool SaveAsXML(bool appendToFile, string filename)
         {
-            FileStream fs;
+            FileMode mode;
 
             // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
             if (appendToFile && File.Exists((filename)))
             {
-                fs = File.Open(filename, FileMode.Append, FileAccess.ReadWrite);
+                mode = FileMode.Append;
             }
             else
             {
-                fs = File.Open(filename, FileMode.Create, FileAccess.ReadWrite);
+                mode = FileMode.Create;
             }
 
-            XmlSerializer xs = new XmlSerializer(typeof(WeaponCollection));
-            xs.Serialize(fs, this);
+            using (FileStream fs = new FileStream(filename, mode, FileAccess.ReadWrite))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(WeaponCollection));
+                xs.Serialize(fs, this);
+            }
 
             return true;
         }

@@ -14,6 +14,10 @@ namespace Assignment2ab
         private WeaponCollection weaponCollection;
         private string inputPath;
         private string outputPath;
+        private string inputPathJSON;
+        private string outputPathJSON;
+        private string inputPathXML;
+        private string outputPathXML;
 
         const string INPUT_FILE = "data2.csv";
         const string OUTPUT_FILE = "weapons.csv";
@@ -32,7 +36,11 @@ namespace Assignment2ab
         public void SetUp()
         {
             inputPath = CombineToAppPath(INPUT_FILE);
+            inputPathJSON = CombineToAppPath(JSON_INPUT_FILE);
+            inputPathXML = CombineToAppPath(XML_INPUT_FILE);
             outputPath = CombineToAppPath(OUTPUT_FILE);
+            outputPathJSON = CombineToAppPath(JSON_OUTPUT_FILE);
+            outputPathXML = CombineToAppPath(XML_OUTPUT_FILE);
             weaponCollection = new WeaponCollection();
         }
 
@@ -43,6 +51,16 @@ namespace Assignment2ab
             if (File.Exists(outputPath))
             {
                 File.Delete(outputPath);
+            }
+
+            if (File.Exists(outputPathJSON))
+            {
+                File.Delete(outputPathJSON);
+            }
+
+            if (File.Exists(outputPathXML))
+            {
+                File.Delete(outputPathXML);
             }
         }
 
@@ -161,12 +179,13 @@ namespace Assignment2ab
             Assert.IsTrue(actual.Passive == null);
         }
 
-        //Test LoadCsv Valid
+        //CSV Tests
         [Test]
         public void WeaponCollection_Load_Save_Load_ValidCsv()
         {
             Assert.IsTrue(weaponCollection.Load(inputPath));
             Assert.IsTrue(weaponCollection.Save(false, outputPath));
+            weaponCollection.Clear();
             Assert.IsTrue(weaponCollection.Load(outputPath));
             Assert.AreEqual(weaponCollection.Count, 95);
         }
@@ -175,53 +194,137 @@ namespace Assignment2ab
         public void WeaponCollection_Load_SaveAsCSV_LoadCSV_ValidCsv()
         {
             Assert.IsTrue(weaponCollection.Load(inputPath));
-            Assert.IsTrue(weaponCollection.SaveAsCSV(outputPath));
+            Assert.IsTrue(weaponCollection.SaveAsCSV(false, outputPath));
+            weaponCollection.Clear();
             Assert.IsTrue(weaponCollection.LoadCSV(outputPath));
             Assert.AreEqual(weaponCollection.Count, 95);
         }
 
-        //Test SaveAsCSV Empty
         [Test]
         public void WeaponCollection_SaveEmpty_Load_ValidCsv()
         {
             weaponCollection.Clear();
-            Assert.IsTrue(weaponCollection.SaveAsCSV(outputPath));
+            Assert.IsTrue(weaponCollection.SaveAsCSV(false, outputPath));
             Assert.IsTrue(weaponCollection.Load(outputPath));
             Assert.IsTrue(weaponCollection.Count == 0);
         }
 
+        //JSON Tests
+        [Test]
+        public void WeaponCollection_Load_Save_Load_ValidJson()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.Save(false, outputPathJSON));
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.Load(inputPathJSON));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_Load_SaveAsJSON_Load_ValidJson()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.SaveAsJSON(false, outputPathJSON));
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.Load(inputPathJSON));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_Load_SaveAsJSON_LoadJSON_ValidJson()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.SaveAsJSON(false, outputPathJSON));
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.LoadJSON(inputPathJSON));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_Load_Save_LoadJSON_ValidJson()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.Save(false, outputPathJSON));
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.LoadJSON(inputPathJSON));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_SaveEmpty_Load_ValidJson()
+        {
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.SaveAsJSON(false, outputPathJSON));
+            Assert.IsTrue(weaponCollection.Load(inputPathJSON));
+            Assert.AreEqual(weaponCollection.Count, 0);
+        }
+
+        //XML Tests
+        [Test]
+        public void WeaponCollection_Load_Save_Load_ValidXml()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.Save(false, outputPathXML));
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.Load(inputPathXML));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_Load_SaveAsXML_LoadXML_ValidXml()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.SaveAsXML(false, outputPathXML));
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.LoadXML(inputPathXML));
+            Assert.AreEqual(weaponCollection.Count, 95);
+        }
+
+        [Test]
+        public void WeaponCollection_SaveEmpty_Load_ValidXml()
+        {
+            weaponCollection.Clear();
+            Assert.IsTrue(weaponCollection.SaveAsXML(false, outputPathXML));
+            Assert.IsTrue(weaponCollection.Load(inputPathXML));
+            Assert.AreEqual(weaponCollection.Count, 0);
+        }
+
+        //Test Load InvalidFormat
+        [Test]
+        public void WeaponCollection_Load_SaveJSON_LoadXML_InvalidXml()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.SaveAsJSON(false, outputPathJSON));
+            weaponCollection.Clear();
+            Assert.IsFalse(weaponCollection.LoadXML(inputPathXML));
+            Assert.AreEqual(weaponCollection.Count, 0);
+        }
+
+        [Test]
+        public void WeaponCollection_Load_SaveXML_LoadJSON_InvalidJson()
+        {
+            Assert.IsTrue(weaponCollection.Load(inputPath));
+            Assert.IsTrue(weaponCollection.SaveAsXML(false, outputPathXML));
+            weaponCollection.Clear();
+            Assert.IsFalse(weaponCollection.LoadJSON(inputPathJSON));
+            Assert.AreEqual(weaponCollection.Count, 0);
+        }
+
+        [Test]
+        public void WeaponCollection_ValidCsv_LoadXML_InvalidXml()
+        {
+            Assert.IsFalse(weaponCollection.LoadXML(inputPath));
+            Assert.AreEqual(weaponCollection.Count, 0);
+        }
+
+        [Test]
+        public void WeaponCollection_ValidCsv_LoadJSON_InvalidJson()
+        {
+            Assert.IsFalse(weaponCollection.LoadJSON(inputPath));
+            Assert.AreEqual(weaponCollection.Count, 0);
+        }
     }
 }
-
-//Test LoadJson Valid
-//1.WeaponCollection_Load_Save_Load_ValidJson - Load the data2.csv and Save () it to
-//weapons.json and call Load () output and validate that there’s 95 entries
-//2. WeaponCollection_Load_SaveAsJSON_Load_ValidJson - Load the data2.csv and
-//SaveAsJSON () it to weapons.json and call Load () output and validate that there’s 95
-//entries
-//3. WeaponCollection_Load_SaveAsJSON_LoadJSON_ValidJson - Load the data2.csv
-//and SaveAsJSON () it to weapons.json and call LoadJSON () on output and validate that
-//there’s 95 entries
-//4. WeaponCollection_Load_Save_LoadJSON_ValidJson - Load the data2.csv and
-//Save () it to weapons.json and call LoadJSON () on output and validate that there’s 95
-//entries
-
-//Test LoadXML Valid
-//1. WeaponCollection_Load_Save_Load_ValidXml - Load the data2.csv and Save () it to
-//weapons.xml and Load () output and validate that there’s 95 entries
-//2. WeaponCollection_Load_SaveAsXML_LoadXML_ValidXml - Load the data2.csv and
-//SaveAsXML () it to weapons.xml and LoadXML () output and validate that there’s 95
-//entries
-
-//Test SaveAsJSON Empty
-//1. WeaponCollection_SaveEmpty_Load_ValidJson - Create an empty
-//WeaponCollection, call SaveAsJSON () to empty.json, and Load () the output and verify
-//the WeaponCollection has a Count of 0
-
-//Test SaveAsXML Empty
-//1. WeaponCollection_SaveEmpty_Load_ValidXml - Create an empty
-//WeaponCollection, call SaveAsXML () to empty.xml, and Load and verify the
-//WeaponCollection has a Count of 0
 
 //Test Load InvalidFormat
 //1. WeaponCollection_Load_SaveJSON_LoadXML_InvalidXml - Load the data2.csv and
