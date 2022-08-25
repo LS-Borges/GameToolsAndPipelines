@@ -122,21 +122,33 @@ namespace Assignment2ab
             {
                 Console.WriteLine($"Sorting by [{sortColumnName}]");
 
-                if (sortColumnName == "Name")
+                if (sortColumnName.ToLower() == "name")
                 {
                     results.Sort(Weapon.CompareByName);
                 }
-                else if (sortColumnName == "Type")
+                else if (sortColumnName.ToLower() == "type")
                 {
                     results.Sort(Weapon.CompareByType);
                 }
-                else if (sortColumnName == "Rarity")
+                else if (sortColumnName.ToLower() == "rarity")
                 {
                     results.Sort(Weapon.CompareByRarity);
                 }
-                else if (sortColumnName == "BaseAttack")
+                else if (sortColumnName.ToLower() == "baseattack")
                 {
                     results.Sort(Weapon.CompareByBaseAttack);
+                }
+                else if (sortColumnName.ToLower() == "image")
+                {
+                    results.Sort(Weapon.CompareByImage);
+                }
+                else if (sortColumnName.ToLower() == "secondarystat")
+                {
+                    results.Sort(Weapon.CompareBySecondaryStat);
+                }
+                else if (sortColumnName.ToLower() == "passive")
+                {
+                    results.Sort(Weapon.CompareByPassive);
                 }
             }
 

@@ -7,6 +7,6 @@ namespace Assignment2ab
     public interface IXmlSerializable
     {
         public bool LoadXML(string path);
-        public bool SaveAsXML(string path);
+        public bool SaveAsXML(bool appendToFile, string path);
     }
 }

@@ -7,6 +7,6 @@ namespace Assignment2ab
     public interface ICsvSerializable
     {
         public bool LoadCSV(string path);
-        public bool SaveAsCSV(string path);
+        public bool SaveAsCSV(bool appendToFile, string path);
     }
 }

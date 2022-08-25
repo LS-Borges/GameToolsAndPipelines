@@ -16,7 +16,11 @@ namespace Assignment2ab
         private string outputPath;
 
         const string INPUT_FILE = "data2.csv";
-        const string OUTPUT_FILE = "output.csv";
+        const string OUTPUT_FILE = "weapons.csv";
+        const string JSON_INPUT_FILE = "weapons.json";
+        const string JSON_OUTPUT_FILE = "weapons.json";
+        const string XML_INPUT_FILE = "weapons.xml";
+        const string XML_OUTPUT_FILE = "weapons.xml";
 
         // A helper function to get the directory of where the actual path is.
         private string CombineToAppPath(string filename)

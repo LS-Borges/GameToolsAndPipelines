@@ -55,6 +55,21 @@ namespace Assignment2ab
             return left.BaseAttack.CompareTo(right.BaseAttack);
         }
 
+        public static int CompareByImage(Weapon left, Weapon right)
+        {
+            return left.Image.CompareTo(right.Image);
+        }
+
+        public static int CompareBySecondaryStat(Weapon left, Weapon right)
+        {
+            return left.SecondaryStat.CompareTo(right.SecondaryStat);
+        }
+
+        public static int CompareByPassive(Weapon left, Weapon right)
+        {
+            return left.Passive.CompareTo(right.Passive);
+        }
+
         /// <summary>
         /// The Weapon string with all the properties
         /// </summary>

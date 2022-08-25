@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Collections;
+using System.Xml.Serialization;
+using System.Text.Json;
 
 namespace Assignment2ab
 {
@@ -23,56 +23,93 @@ namespace Assignment2ab
             }
             else
             {
-                WeaponDataParse(filename);
-                return true;
+                string extension = Path.GetExtension(filename);
+
+                if (extension.ToLower() == ".csv")
+                {
+                    LoadCSV(filename);
+                    return true;
+                }
+                else if (extension.ToLower() == ".json")
+                {
+                    LoadJSON(filename);
+                    return true;
+                }
+                else if (extension.ToLower() == ".xml")
+                {
+                    LoadXML(filename);
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine($"{extension} EXTENSION NOT SUPPORTED");
+                    return false;
+                }
             }           
         }
 
-        public bool LoadCSV(string path)
+        public bool LoadCSV(string filename)
         {
-
+            WeaponDataParse(filename);
+            return true;
         }
 
-        public bool LoadJSON(string path)
+        public bool LoadJSON(string filename)
         {
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                WeaponCollection temp = new WeaponCollection();
 
+                if (reader.Peek() > 0)
+                {
+                    string data = reader.ReadToEnd();
+                    temp = JsonSerializer.Deserialize<WeaponCollection>(data);
+
+                    foreach (var weapon in temp)
+                    {
+                        Add(weapon);
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
-        //public bool LoadXML(string path)
-        //{
-
-        //}
+        public bool LoadXML(string filename)
+        {
+            return true;
+        }
 
         // Save Functions 
         public bool Save(bool appendToFile, string filename)
         {
             if (!string.IsNullOrEmpty(filename))
             {
-                FileStream fs;
+                string extension = Path.GetExtension(filename);
 
-                // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
-                if (appendToFile && File.Exists((filename)))
+                if (extension.ToLower() == ".csv")
                 {
-                    fs = File.Open(filename, FileMode.Append);
+                    SaveAsCSV(appendToFile, filename);
+                    return true;
+                }
+                else if (extension.ToLower() == ".json")
+                {
+                    SaveAsJSON(appendToFile, filename);
+                    return true;
+                }
+                else if (extension.ToLower() == ".xml")
+                {
+                    SaveAsXML(appendToFile, filename);
+                    return true;
                 }
                 else
                 {
-                    fs = File.Open(filename, FileMode.Create);
-                }
-
-                // opens a stream writer with the file handle to write to the output file.
-                using (StreamWriter writer = new StreamWriter(fs))
-                {
-                    // Hint: use writer.WriteLine
-                    writer.WriteLine("Name,Type,Image,Rarity,BaseAttack,SecondaryStat,Passive");
-
-                    for (int j = 0; j < this.Count; ++j)
-                    {
-                        writer.WriteLine(this[j].ToString());
-                    }
-
-                    Console.WriteLine("File has been saved");
-                    return true;
+                    Console.WriteLine($"{extension} EXTENSION NOT SUPPORTED");
+                    return false;
                 }
             }
             else
@@ -88,22 +125,81 @@ namespace Assignment2ab
             }
         }
 
-        public bool SaveAsCSV(string path)
+        public bool SaveAsCSV(bool appendToFile, string filename)
         {
+            FileStream fs;
 
+            // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
+            if (appendToFile && File.Exists((filename)))
+            {
+                fs = File.Open(filename, FileMode.Append);
+            }
+            else
+            {
+                fs = File.Open(filename, FileMode.Create);
+            }
+
+            // opens a stream writer with the file handle to write to the output file.
+            using (StreamWriter writer = new StreamWriter(fs))
+            {
+                // Hint: use writer.WriteLine
+                writer.WriteLine("Name,Type,Image,Rarity,BaseAttack,SecondaryStat,Passive");
+
+                for (int j = 0; j < this.Count; ++j)
+                {
+                    writer.WriteLine(this[j].ToString());
+                }
+
+                Console.WriteLine("File has been saved");
+                return true;
+            }
         }
 
-        public bool SaveAsJSON(string path)
+        public bool SaveAsJSON(bool appendToFile, string filename)
         {
-            string data = JsonUtility.ToJson(path., true);
-            File.WriteAllText(path, data);
+            FileStream fs;
+
+            // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
+            if (appendToFile && File.Exists((filename)))
+            {
+                fs = File.Open(filename, FileMode.Append);
+            }
+            else
+            {
+                fs = File.Open(filename, FileMode.Create);
+            }
+
+            // opens a stream writer with the file handle to write to the output file.
+            using (StreamWriter writer = new StreamWriter(fs))
+            {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string data = JsonSerializer.Serialize<WeaponCollection>(this, options);
+                writer.WriteLine(data);
+            }
+
+            Console.WriteLine("File has been saved");
             return true;
         }
 
-        //public bool SaveAsXML(string path)
-        //{
+        public bool SaveAsXML(bool appendToFile, string filename)
+        {
+            FileStream fs;
 
-        //}
+            // Check if the append flag is set, and if so, then open the file in append mode; otherwise, create the file to write.
+            if (appendToFile && File.Exists((filename)))
+            {
+                fs = File.Open(filename, FileMode.Append, FileAccess.ReadWrite);
+            }
+            else
+            {
+                fs = File.Open(filename, FileMode.Create, FileAccess.ReadWrite);
+            }
+
+            XmlSerializer xs = new XmlSerializer(typeof(WeaponCollection));
+            xs.Serialize(fs, this);
+
+            return true;
+        }
 
         // Get Functions
         public int GetHighestBaseAttack()
@@ -166,7 +262,34 @@ namespace Assignment2ab
 
         public void SortBy(string columnName)
         {
-            
+            if(columnName.ToLower() == "name")
+            {
+                this.Sort(Weapon.CompareByName);
+            }
+            else if (columnName.ToLower() == "type")
+            {
+                this.Sort(Weapon.CompareByType);
+            }
+            else if (columnName.ToLower() == "rarity")
+            {
+                this.Sort(Weapon.CompareByRarity);
+            }
+            else if (columnName.ToLower() == "baseattack")
+            {
+                this.Sort(Weapon.CompareByBaseAttack);
+            }
+            else if (columnName.ToLower() == "image")
+            {
+                this.Sort(Weapon.CompareByImage);
+            }
+            else if (columnName.ToLower() == "secondarystat")
+            {
+                this.Sort(Weapon.CompareBySecondaryStat);
+            }
+            else if (columnName.ToLower() == "passive")
+            {
+                this.Sort(Weapon.CompareByPassive);
+            } 
         }
 
         private void WeaponDataParse(string fileName)
