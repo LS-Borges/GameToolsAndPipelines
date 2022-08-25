@@ -81,7 +81,20 @@ namespace Assignment2ab
 
         public bool LoadXML(string filename)
         {
-            return true;
+            WeaponCollection temp = new WeaponCollection();
+
+            using (FileStream fs = new FileStream(filename, FileMode.Open))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(WeaponCollection));
+                temp = (WeaponCollection)xs.Deserialize(fs);
+
+                foreach (var weapon in temp)
+                {
+                    Add(weapon);
+                }
+
+                return true;
+            }
         }
 
         // Save Functions 
