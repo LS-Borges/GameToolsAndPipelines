@@ -1,8 +1,8 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.IO;
-using NUnit.Framework;
 
-namespace Assignment2ab
+namespace WeaponLib
 {
     [TestFixture]
     public class UnitTests
