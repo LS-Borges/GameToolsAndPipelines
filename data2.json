@@ -1,0 +1,857 @@
+[
+  {
+    "Name": "Hunter\u0027s Bow",
+    "Type": 4,
+    "Rarity": 1,
+    "BaseAttack": 23,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/44/Weapon_Hunter%27s_Bow.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Beginner\u0027s Protector",
+    "Type": 1,
+    "Rarity": 1,
+    "BaseAttack": 23,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/f/fc/Weapon_Beginner%27s_Protector.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Waster Greatsword",
+    "Type": 2,
+    "Rarity": 1,
+    "BaseAttack": 23,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/4c/Weapon_Waster_Greatsword.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Dull Blade",
+    "Type": 0,
+    "Rarity": 1,
+    "BaseAttack": 23,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/2f/Weapon_Dull_Blade.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Apprentice\u0027s Notes",
+    "Type": 3,
+    "Rarity": 1,
+    "BaseAttack": 23,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/c/cf/Weapon_Apprentice%27s_Notes.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Seasoned Hunter\u0027s Bow",
+    "Type": 4,
+    "Rarity": 2,
+    "BaseAttack": 33,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/8/82/Weapon_Seasoned_Hunter%27s_Bow.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Old Merc\u0027s Pal",
+    "Type": 2,
+    "Rarity": 2,
+    "BaseAttack": 33,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/0/0b/Weapon_Old_Merc%27s_Pal.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Silver Sword",
+    "Type": 0,
+    "Rarity": 2,
+    "BaseAttack": 33,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/32/Weapon_Silver_Sword.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Pocket Grimoire",
+    "Type": 3,
+    "Rarity": 2,
+    "BaseAttack": 33,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/16/Weapon_Pocket_Grimoire.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Iron Point",
+    "Type": 1,
+    "Rarity": 2,
+    "BaseAttack": 33,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/25/Weapon_Iron_Point.png",
+    "SecondaryStat": "None",
+    "Passive": "None"
+  },
+  {
+    "Name": "Bloodtainted Greatsword",
+    "Type": 2,
+    "Rarity": 3,
+    "BaseAttack": 38,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/4a/Weapon_Bloodtainted_Greatsword.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Bane of Fire and Thunder"
+  },
+  {
+    "Name": "Magic Guide",
+    "Type": 3,
+    "Rarity": 3,
+    "BaseAttack": 38,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/39/Weapon_Magic_Guide.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Bane of Storm and Tide"
+  },
+  {
+    "Name": "Skyrider Sword",
+    "Type": 0,
+    "Rarity": 3,
+    "BaseAttack": 38,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/34/Weapon_Skyrider_Sword.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Determination"
+  },
+  {
+    "Name": "Slingshot",
+    "Type": 4,
+    "Rarity": 3,
+    "BaseAttack": 38,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/c/ca/Weapon_Slingshot.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Slingshot"
+  },
+  {
+    "Name": "Black Tassel",
+    "Type": 1,
+    "Rarity": 3,
+    "BaseAttack": 38,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/43/Weapon_Black_Tassel.png",
+    "SecondaryStat": "HP",
+    "Passive": "Bane of the Soft"
+  },
+  {
+    "Name": "Recurve Bow",
+    "Type": 4,
+    "Rarity": 3,
+    "BaseAttack": 38,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/b/b5/Weapon_Recurve_Bow.png",
+    "SecondaryStat": "Base HP",
+    "Passive": "Cull the Weak"
+  },
+  {
+    "Name": "Ferrous Shadow",
+    "Type": 2,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/e/e9/Weapon_Ferrous_Shadow.png",
+    "SecondaryStat": "Base HP",
+    "Passive": "Unbending"
+  },
+  {
+    "Name": "White Iron Greatsword",
+    "Type": 2,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/5/56/Weapon_White_Iron_Greatsword.png",
+    "SecondaryStat": "DEF",
+    "Passive": "Cull the Weak"
+  },
+  {
+    "Name": "Debate Club",
+    "Type": 2,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/7/74/Weapon_Debate_Club.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Blunt Conclusion"
+  },
+  {
+    "Name": "Sharpshooter\u0027s Oath",
+    "Type": 4,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/5/52/Weapon_Sharpshooter%27s_Oath.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Precise"
+  },
+  {
+    "Name": "Sword of Descension",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/17/Weapon_Sword_of_Descension.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Descension"
+  },
+  {
+    "Name": "Thrilling Tales of Dragon Slayers",
+    "Type": 3,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/19/Weapon_Thrilling_Tales_of_Dragon_Slayers.png",
+    "SecondaryStat": "Base HP",
+    "Passive": "Legacy"
+  },
+  {
+    "Name": "Cool Steel",
+    "Type": 0,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/9c/Weapon_Cool_Steel.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Bane of Water and Ice"
+  },
+  {
+    "Name": "White Tassel",
+    "Type": 1,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/1f/Weapon_White_Tassel.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Sharp"
+  },
+  {
+    "Name": "Fillet Blade",
+    "Type": 0,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/f/f7/Weapon_Fillet_Blade.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Gash"
+  },
+  {
+    "Name": "Harbinger of Dawn",
+    "Type": 0,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/23/Weapon_Harbinger_of_Dawn.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Vigorous"
+  },
+  {
+    "Name": "Otherworldly Story",
+    "Type": 3,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/11/Weapon_Otherworldly_Story.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Energy Shower"
+  },
+  {
+    "Name": "Skyrider Greatsword",
+    "Type": 2,
+    "Rarity": 3,
+    "BaseAttack": 39,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/6e/Weapon_Skyrider_Greatsword.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Courage"
+  },
+  {
+    "Name": "Emerald Orb",
+    "Type": 3,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/7/7c/Weapon_Emerald_Orb.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Rapids"
+  },
+  {
+    "Name": "Twin Nephrite",
+    "Type": 3,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/e/e3/Weapon_Twin_Nephrite.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Guerilla Tactic"
+  },
+  {
+    "Name": "Raven Bow",
+    "Type": 4,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/d/d0/Weapon_Raven_Bow.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Bane of Flame and Water"
+  },
+  {
+    "Name": "Messenger",
+    "Type": 4,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/38/Weapon_Messenger.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Archer\u0027s Message"
+  },
+  {
+    "Name": "Ebony Bow",
+    "Type": 4,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/a/a1/Weapon_Ebony_Bow.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Decimate"
+  },
+  {
+    "Name": "Amber Catalyst",
+    "Type": 3,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/97/Weapon_Amber_Catalyst.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Elemental Mastery"
+  },
+  {
+    "Name": "Quartz",
+    "Type": 2,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/7/71/Weapon_Quartz.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Residual Heat"
+  },
+  {
+    "Name": "Dark Iron Sword",
+    "Type": 0,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/3a/Weapon_Dark_Iron_Sword.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Overloaded"
+  },
+  {
+    "Name": "Traveler\u0027s Handy Sword",
+    "Type": 0,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/c/c9/Weapon_Traveler%27s_Handy_Sword.png",
+    "SecondaryStat": "DEF",
+    "Passive": "Journey"
+  },
+  {
+    "Name": "Halberd",
+    "Type": 1,
+    "Rarity": 3,
+    "BaseAttack": 40,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/41/Weapon_Halberd.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Heavy"
+  },
+  {
+    "Name": "Prototype Malice",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/32/Weapon_Prototype_Malice.png",
+    "SecondaryStat": "Base HP",
+    "Passive": "Golden Plating"
+  },
+  {
+    "Name": "Alley Hunter",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/0/0a/Weapon_Alley_Hunter.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Urban Guerrilla"
+  },
+  {
+    "Name": "Favonius Sword",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/90/Weapon_Favonius_Sword.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Windfall"
+  },
+  {
+    "Name": "Sacrificial Sword",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/a/a0/Weapon_Sacrificial_Sword.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Composed"
+  },
+  {
+    "Name": "Sacrificial Fragments",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/6c/Weapon_Sacrificial_Fragments.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Composed"
+  },
+  {
+    "Name": "Favonius Warbow",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/8/85/Weapon_Favonius_Warbow.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Windfall"
+  },
+  {
+    "Name": "Eye of Perception",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/6c/Weapon_Eye_of_Perception.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Echo"
+  },
+  {
+    "Name": "Deathmatch",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/69/Weapon_Deathmatch.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Gladiator"
+  },
+  {
+    "Name": "Dragon\u0027s Bane",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/24/Weapon_Dragon%27s_Bane.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Bane of Flame and Water"
+  },
+  {
+    "Name": "Compound Bow",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/32/Weapon_Compound_Bow.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Infusion Arrow"
+  },
+  {
+    "Name": "Favonius Greatsword",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/9c/Weapon_Favonius_Greatsword.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Critical Charge"
+  },
+  {
+    "Name": "Lithic Blade",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 41,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/3a/Weapon_Lithic_Blade.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Lithic Axiom - Unity"
+  },
+  {
+    "Name": "Lithic Spear",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/2a/Weapon_Lithic_Spear.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Lithic Axiom - Subjugating Evil"
+  },
+  {
+    "Name": "Prototype Crescent",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/43/Weapon_Prototype_Crescent.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Unreturning"
+  },
+  {
+    "Name": "The Viridescent Hunt",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/f/ff/Weapon_The_Viridescent_Hunt.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Verdant Wind"
+  },
+  {
+    "Name": "Royal Bow",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/99/Weapon_Royal_Bow.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Focus"
+  },
+  {
+    "Name": "Rust",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/1c/Weapon_Rust.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Rapid Firing"
+  },
+  {
+    "Name": "The Stringless",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/7/71/Weapon_The_Stringless.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Arrowless Song"
+  },
+  {
+    "Name": "Royal Longsword",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/c/cd/Weapon_Royal_Longsword.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Focus"
+  },
+  {
+    "Name": "Lion\u0027s Roar",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/e/e6/Weapon_Lion%27s_Roar.png",
+    "SecondaryStat": "ATK",
+    "Passive": "Bane of Fire and Thunder"
+  },
+  {
+    "Name": "Iron Sting",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/35/Weapon_Iron_Sting.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Infusion Stinger"
+  },
+  {
+    "Name": "Rainslasher",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/d/d4/Weapon_Rainslasher.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Bane of Storm and Tide"
+  },
+  {
+    "Name": "Whiteblind",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/0/04/Weapon_Whiteblind.png",
+    "SecondaryStat": "Base DEF",
+    "Passive": "Infusion Blade"
+  },
+  {
+    "Name": "The Bell",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/6e/Weapon_The_Bell.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Rebellious Guardian"
+  },
+  {
+    "Name": "Serpent Spine",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/8/88/Weapon_Serpent_Spine.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Wavesplitter"
+  },
+  {
+    "Name": "Prototype Grudge",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/7/7a/Weapon_Prototype_Grudge.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Magic Affinity"
+  },
+  {
+    "Name": "Favonius Codex",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/36/Weapon_Favonius_Codex.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Critical Charge"
+  },
+  {
+    "Name": "Solar Pearl",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/f/fc/Weapon_Solar_Pearl.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Solar Shine"
+  },
+  {
+    "Name": "The Widsith",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/f/f0/Weapon_The_Widsith.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Debut"
+  },
+  {
+    "Name": "Blackcliff Amulet",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/21/Weapon_Blackcliff_Amulet.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Exorcise"
+  },
+  {
+    "Name": "Wine and Song",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/c/c6/Weapon_Wine_and_Song.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Wind in the Square"
+  },
+  {
+    "Name": "Blackcliff Pole",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/d/d5/Weapon_Blackcliff_Pole.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Press the Advantage"
+  },
+  {
+    "Name": "The Black Sword",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/c/cf/Weapon_The_Black_Sword.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Justice"
+  },
+  {
+    "Name": "Blackcliff Slasher",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/d/d7/Weapon_Blackcliff_Slasher.png",
+    "SecondaryStat": "CRIT DMG",
+    "Passive": "Press the Advantage"
+  },
+  {
+    "Name": "The Flute",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 42,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/63/Weapon_The_Flute.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Chord"
+  },
+  {
+    "Name": "Sacrificial Bow",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 43,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/e/ec/Weapon_Sacrificial_Bow.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Composed"
+  },
+  {
+    "Name": "Royal Grimoire",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/99/Weapon_Royal_Grimoire.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Energy Blast"
+  },
+  {
+    "Name": "Favonius Lance",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/5/57/Weapon_Favonius_Lance.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Windfall"
+  },
+  {
+    "Name": "Royal Greatsword",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/b/bf/Weapon_Royal_Greatsword.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Focus"
+  },
+  {
+    "Name": "Crescent Pike",
+    "Type": 1,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/4c/Weapon_Crescent_Pike.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Infusion Needle"
+  },
+  {
+    "Name": "Blackcliff Warbow",
+    "Type": 4,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/b/b8/Weapon_Blackcliff_Warbow.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Press the Advantage"
+  },
+  {
+    "Name": "Prototype Rancour",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/e/ef/Weapon_Prototype_Rancour.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Smashed Stone"
+  },
+  {
+    "Name": "The Alley Flash",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/8/83/Weapon_The_Alley_Flash.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Itinerant Hero"
+  },
+  {
+    "Name": "Prototype Aminus",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/68/Weapon_Prototype_Aminus.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Crush"
+  },
+  {
+    "Name": "Mappa Mare",
+    "Type": 3,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/4d/Weapon_Mappa_Mare.png",
+    "SecondaryStat": "Elemental Mastery",
+    "Passive": "Infusion Scroll"
+  },
+  {
+    "Name": "Blackcliff Longsword",
+    "Type": 0,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/6f/Weapon_Blackcliff_Longsword.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Press the Advantage"
+  },
+  {
+    "Name": "Sacrificial Greatsword",
+    "Type": 2,
+    "Rarity": 4,
+    "BaseAttack": 44,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/17/Weapon_Sacrificial_Greatsword.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Composed"
+  },
+  {
+    "Name": "Skyward Harp",
+    "Type": 4,
+    "Rarity": 5,
+    "BaseAttack": 45,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/19/Weapon_Skyward_Harp.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Echoing Ballad"
+  },
+  {
+    "Name": "lf\u0027s Gravestone",
+    "Type": 2,
+    "Rarity": 5,
+    "BaseAttack": 46,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/4/4f/Weapon_Wolf%27s_Gravestone.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Wolfish Tracker"
+  },
+  {
+    "Name": "unwu\u0027s Iris Rift",
+    "Type": 1,
+    "Rarity": 5,
+    "BaseAttack": 46,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/93/Weapon_Kunwu%27s_Iris_Rift.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Rainbow-Piercing Stinger"
+  },
+  {
+    "Name": "Lost Prayer to the Sacred Winds",
+    "Type": 3,
+    "Rarity": 5,
+    "BaseAttack": 46,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/98/Weapon_Lost_Prayer_to_the_Sacred_Winds.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Boundless Blessing"
+  },
+  {
+    "Name": "Amos\u0027 Bow",
+    "Type": 4,
+    "Rarity": 5,
+    "BaseAttack": 46,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/d/de/Weapon_Amos%27_Bow.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Strong-Willed"
+  },
+  {
+    "Name": "Skyward Blade",
+    "Type": 0,
+    "Rarity": 5,
+    "BaseAttack": 46,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/0/03/Weapon_Skyward_Blade.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Sky-Piercing Fang"
+  },
+  {
+    "Name": "Skyward Atlas",
+    "Type": 3,
+    "Rarity": 5,
+    "BaseAttack": 48,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/3/33/Weapon_Skyward_Atlas.png",
+    "SecondaryStat": "Base ATK",
+    "Passive": "Wandering Clouds"
+  },
+  {
+    "Name": "Primordial Jade Winged-Spear",
+    "Type": 1,
+    "Rarity": 5,
+    "BaseAttack": 48,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/8/80/Weapon_Primordial_Jade_Winged-Spear.png",
+    "SecondaryStat": "CRIT Rate",
+    "Passive": "Eagle Spear of Justice"
+  },
+  {
+    "Name": "Skyward Pride",
+    "Type": 2,
+    "Rarity": 5,
+    "BaseAttack": 48,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/0/0b/Weapon_Skyward_Pride.png",
+    "SecondaryStat": "Energy Recharge",
+    "Passive": "Sky-ripping Dragon Spine"
+  },
+  {
+    "Name": "Aquila Favonia",
+    "Type": 0,
+    "Rarity": 5,
+    "BaseAttack": 48,
+    "Image": "https://vignette.wikia.nocookie.net/gensin-impact/images/6/6a/Weapon_Aquila_Favonia.png",
+    "SecondaryStat": "Physical DMG Bonus",
+    "Passive": "Falcon\u0027s Defiance"
+  }
+]
